@@ -91,6 +91,22 @@
             width: 300px;
             outline: none;
         }
+        .image-container {
+            display: flex;
+        }
+        .image-container img {
+            max-width: 50%; /* Adjust this to control the width of the images */
+            height: auto;
+        }
+        .black-line {
+            background-color: black;
+            height: 2px;
+            width: 100%;
+            position: fixed;
+            top: 50%; /* Adjust this value to control the vertical position */
+            left: 0;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -99,6 +115,7 @@
         <a href="#branch3">About Margaret Lucy Wilkins</a>
         <a href="#branch1">Musical Works</a>
         <a href="#branch2">Musical Reviews</a>
+        <a href="#gal">Gallery</a>
 
     </div>
 
@@ -279,7 +296,17 @@ Wakefield Examiner: "Such is their high musical quality there is no doubt that t
             </audio>
         </div>
     </div>
-    
+    <div class="black-line"></div>
+    <div id="gal" class="section">
+        <h1>Gallery</h1>
+    <div class="image-container">
+        <img src="20191102_173136.jpg" alt="Image 1">
+        <img src="3691_h_78x78.jpeg" alt="Image 2">
+    </div>
+    <div class="image-container">
+        <img src="3690_h_78x78.jpeg" alt="Image 1">
+        <img src="3692_h_78x78.jpeg" alt="Image 2">
+    </div>
 
 
     <script>

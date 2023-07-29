@@ -9,10 +9,10 @@
             font-family: "Times New Roman", Times, serif; /* Set font to Times New Roman */
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9; /* More off-white background color */
+            background-color: #f9e6ea; /* Pinkish off-white background color */
         }
         h1 {
-            font-size: 48px; /* Increase font size for the title even more */
+            font-size: 60px; /* Increase font size for the title */
             text-align: center; /* Center the title */
             margin-top: 50px; /* Add more top margin to center the title */
         }
@@ -42,6 +42,21 @@
         .section {
             padding: 50px 20px;
         }
+        /* Back to top button style */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            display: none;
+        }
+        .back-to-top:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -49,12 +64,15 @@
         <a href="#branch1">Branch 1</a>
         <a href="#branch2">Branch 2</a>
         <a href="#branch3">Branch 3</a>
+        <a href="#" class="back-to-top">Back to Top</a>
     </div>
 
     <h1>Margaret Wilkins</h1>
 
-    <!-- Placeholder image -->
-    <img src="path/to/placeholder-image.jpg" alt="Placeholder Image">
+    <!-- Placeholder image centered -->
+    <div style="display: flex; justify-content: center;">
+        <img src="path/to/placeholder-image.jpg" alt="Placeholder Image">
+    </div>
 
     <!-- Content for Branch 1 -->
     <div id="branch1" class="section">
@@ -83,6 +101,24 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Show the "Back to Top" button when scrolling down
+        window.addEventListener("scroll", function() {
+            const backToTopBtn = document.querySelector(".back-to-top");
+            if (window.pageYOffset > 200) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // Scroll to the top when clicking on "Back to Top" button
+        document.querySelector(".back-to-top").addEventListener("click", function(e) {
+            e.preventDefault();
+            document.querySelector("body").scrollIntoView({
+                behavior: "smooth"
             });
         });
     </script>

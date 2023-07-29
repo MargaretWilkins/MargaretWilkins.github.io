@@ -61,6 +61,23 @@
             background-color: #0056b3;
             opacity: 1;
         }
+        /* Centered image style */
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        /* MP3 player style */
+        .mp3-player {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .mp3-player audio {
+            width: 300px;
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +91,7 @@
     <h1>Margaret Wilkins</h1>
 
     <!-- Placeholder image centered -->
-    <div style="display: flex; justify-content: center;">
+    <div class="centered-image">
         <img src="path/to/placeholder-image.jpg" alt="Placeholder Image">
     </div>
 
@@ -82,18 +99,51 @@
     <div id="branch1" class="section">
         <h2>Branch 1</h2>
         <p class="subtext">This is the content for Branch 1.</p>
+        <!-- Image slot for Branch 1 -->
+        <div class="centered-image">
+            <img src="path/to/branch1-image.jpg" alt="Branch 1 Image">
+        </div>
+        <!-- MP3 player for Branch 1 -->
+        <div class="mp3-player">
+            <audio controls>
+                <source src="path/to/branch1-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
     
     <!-- Content for Branch 2 -->
     <div id="branch2" class="section">
         <h2>Branch 2</h2>
         <p class="subtext">This is the content for Branch 2.</p>
+        <!-- Image slot for Branch 2 -->
+        <div class="centered-image">
+            <img src="path/to/branch2-image.jpg" alt="Branch 2 Image">
+        </div>
+        <!-- MP3 player for Branch 2 -->
+        <div class="mp3-player">
+            <audio controls>
+                <source src="path/to/branch2-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
     
     <!-- Content for Branch 3 -->
     <div id="branch3" class="section">
         <h2>Branch 3</h2>
         <p class="subtext">This is the content for Branch 3.</p>
+        <!-- Image slot for Branch 3 -->
+        <div class="centered-image">
+            <img src="path/to/branch3-image.jpg" alt="Branch 3 Image">
+        </div>
+        <!-- MP3 player for Branch 3 -->
+        <div class="mp3-player">
+            <audio controls>
+                <source src="path/to/branch3-audio.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 
     <script>

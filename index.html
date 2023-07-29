@@ -1,1 +1,80 @@
-hello
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margaret Wilkins</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Subtle off-white background color */
+        }
+        h1 {
+            font-family: 'Your Font Name', Arial, sans-serif; /* Replace 'Your Font Name' with the desired font */
+            margin-top: 20px;
+        }
+        .navbar {
+            background-color: #f1f1f1;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+        .navbar a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #000;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+        .section {
+            padding: 50px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#branch1">Branch 1</a>
+        <a href="#branch2">Branch 2</a>
+        <a href="#branch3">Branch 3</a>
+    </div>
+
+    <h1>Margaret Wilkins</h1>
+
+    <!-- Placeholder image -->
+    <img src="path/to/placeholder-image.jpg" alt="Placeholder Image">
+
+    <!-- Content for Branch 1 -->
+    <div id="branch1" class="section">
+        <h2>Branch 1</h2>
+        <p>This is the content for Branch 1.</p>
+    </div>
+    
+    <!-- Content for Branch 2 -->
+    <div id="branch2" class="section">
+        <h2>Branch 2</h2>
+        <p>This is the content for Branch 2.</p>
+    </div>
+    
+    <!-- Content for Branch 3 -->
+    <div id="branch3" class="section">
+        <h2>Branch 3</h2>
+        <p>This is the content for Branch 3.</p>
+    </div>
+
+    <script>
+        // Smooth scrolling when clicking on navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

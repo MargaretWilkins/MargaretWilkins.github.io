@@ -51,10 +51,15 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            display: none;
+            display: block;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            opacity: 0.7;
         }
         .back-to-top:hover {
             background-color: #0056b3;
+            opacity: 1;
         }
     </style>
 </head>
@@ -102,17 +107,7 @@
                 });
             });
         });
-
-        // Show the "Back to Top" button when scrolling down
-        window.addEventListener("scroll", function() {
-            const backToTopBtn = document.querySelector(".back-to-top");
-            if (window.pageYOffset > 200) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        });
-
+        
         // Scroll to the top when clicking on "Back to Top" button
         document.querySelector(".back-to-top").addEventListener("click", function(e) {
             e.preventDefault();

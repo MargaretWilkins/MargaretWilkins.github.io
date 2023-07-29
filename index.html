@@ -90,23 +90,19 @@
         .mp3-player audio {
             width: 300px;
             outline: none;
+
         }
+        
         .image-container {
             display: flex;
+            justify-content: center; /* Center the images horizontally */
+            align-items: center; /* Center the images vertically */
         }
         .image-container img {
             max-width: 50%; /* Adjust this to control the width of the images */
-            min-width: 25%
+            min-width: 200px; /* Set a minimum width for the images */
             height: auto;
-        }
-        .black-line {
-            background-color: black;
-            height: 2px;
-            width: 100%;
-            position: fixed;
-            top: 50%; /* Adjust this value to control the vertical position */
-            left: 0;
-            transform: translateY(-50%);
+            flex: 1
         }
     </style>
 </head>

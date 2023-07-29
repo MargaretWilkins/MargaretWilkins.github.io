@@ -10,6 +10,10 @@
             margin: 0;
             padding: 0;
             background-color: #f9e6ea; /* Pinkish off-white background color */
+            background-image: url("path/to/flowery-pattern.png"); /* Replace with the path to your flowery pattern image */
+            background-repeat: repeat-y;
+            background-size: 50px 100%; /* Adjust the size of the flowery pattern */
+            background-position: left top, right top;
         }
         h1 {
             font-size: 75px; /* Increase font size for the title */
@@ -66,6 +70,10 @@
             display: flex;
             justify-content: center;
             margin: 30px 0;
+        }
+        .centered-image img {
+            max-width: 500px; /* Set the maximum width for the images */
+            height: auto; /* Allow the height to adjust to maintain aspect ratio */
         }
         /* MP3 player style */
         .mp3-player {

@@ -103,12 +103,15 @@
             display: flex;
             justify-content: center; /* Center the images horizontally */
             align-items: center; /* Center the images vertically */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
         }
+
         .image-container img {
-            max-width: 40%; /* Adjust this to control the width of the images */
+            max-width: 45%; /* Adjust this to control the width of the images */
             min-width: 200px; /* Set a minimum width for the images */
             height: auto;
-            flex: 1
+            flex: 1;
+            margin: 10px; /* Add margin between images */
         }
         .black-line {
             background-color: black;

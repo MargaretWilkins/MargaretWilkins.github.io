@@ -2,585 +2,814 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Margaret Lucy Wilkins</title>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fce9ed; /* Subtle pink background color */
-            background-image: url("path/to/flowery-pattern.png");
-            background-repeat: repeat-y;
-            padding: 3%;
-            background-size: 50px 100%;
-            background-position: left top, right top;
-            border-top: 7px solid black; /* Add a thin strip of black border on the top */
-            border-bottom: 7px solid black;
-           
-        h1 {
-            font-size: 6vw; /* Use viewport width for font size */
-            text-align: center; /* Center the title */
-            margin-top: 5vw; /* Use viewport width for margin-top */
-        }
-        
-        h2 {
-            font-size: 3.75vw; /* Use viewport width for font size */
-            text-align: center; /* Center the subtitles */
-        }
-        
-        h3 {
-            font-size: 2.25vw; /* Use viewport width for font size */
-            text-align: center; /* Center the subtitles */
-        }
-        
-        .subtext {
-            font-size: 1.35vw; /* Use viewport width for font size */
-            text-align: center; /* Center the subtext */
-        }
-        
-        .navbar {
-            background-color: #f1f1f1;
-            padding: 1vw; /* Use viewport width for padding */
-            position: sticky;
-            top: 0;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .navbar a {
-            display: inline-block;
-            padding: 1vw 2vw; /* Use viewport width for padding */
-            color: #000;
-            text-decoration: none;
-        }
-            .navbar a:hover {
-            background-color: #ddd; 
-        }
-        
-        .section {
-            padding: 5vw 1vw; /* Use viewport width for padding */
-        }
-        
-        .back-to-top {
-            padding: 1vw 2vw; /* Use viewport width for padding */
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            display: block;
-            position: fixed;
-            bottom: 3vw; /* Use viewport width for bottom position */
-            right: 3vw; /* Use viewport width for right position */
-            opacity: 0.7;
-        }
-        
-        .back-to-top:hover {
-            background-color: #0056b3;
-            opacity: 1;
-        }
-        .yay {
-            
-            justify-content: center;
-            margin: 2vw 0;
-            max-width: 10px
-            height: auto; /* Allow the height to adjust to maintain aspect ratio */
-            display: flex;
-        {
-        .centered-image img {
-            max-width: 10px; /* Use percentage for max-width */
-            height: auto; /* Allow the height to adjust to maintain aspect ratio */
-            justify-content: center; /* Center the images horizontally */
-            align-items: center; /* Center the images vertically */
-           
-        }
-        
-        .mp3-player {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 3vw; /* Use viewport width for margin-top */
-        }
-        
-        .mp3-player audio {
-            width: 30vw; /* Use viewport width for width */
-            outline: none;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center; /* Center the images horizontally */
-            align-items: center; /* Center the images vertically */
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            max-width: 45vw; /* Adjust this to control the width of the images */
-            min-width: 20vw
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --pink:       #fce9ed;
+            --pink-mid:   #f7d0d8;
+            --pink-deep:  #d4889a;
+            --pink-card:  #fef4f6;
+            --ink:        #1a0c10;
+            --ink-soft:   #4a2832;
+            --ink-light:  #8a5060;
+            --border:     rgba(180, 100, 120, 0.22);
+            --serif:      "IM Fell English", "Times New Roman", serif;
+            --serif-sc:   "IM Fell English SC", "Times New Roman", serif;
         }
 
-        .image-container img {
-            max-width: 45vw; /* Adjust this to control the width of the images */
-            min-width: 20vw; /* Set a minimum width for the images */
-            height: auto;
-            flex: 1;
-            margin: 1vw; /* Add margin between images */
-            justify-content: center; /* Center the images horizontally */
-            align-items: center; /* Center the images vertically */
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--serif);
+            background-color: var(--pink);
+            color: var(--ink);
+            border-top: 7px solid var(--ink);
+            border-bottom: 7px solid var(--ink);
         }
-        .black-line {
-            background-color: black;
-            height: 0.5vw;
-            width: 100vw;
-            position: relative; /* Use relative positioning for the line */
-            top: 10%; /* Adjust this value to control the vertical position */
-            left: 0;
-            transform: translateY(-50%);
+
+        /* ─────────────────────────────
+           NAVBAR
+        ───────────────────────────── */
+        .navbar {
+            background: linear-gradient(to bottom, #f5dde3, #eedade);
+            border-bottom: 1px solid var(--pink-deep);
+            padding: 0 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0;
+            box-shadow: 0 2px 10px rgba(150,70,90,0.13);
+        }
+
+        .navbar a {
+            font-family: var(--serif-sc);
+            display: inline-block;
+            padding: 0.8rem 1.1rem;
+            color: var(--ink-soft);
+            text-decoration: none;
+            font-size: clamp(0.62rem, 1.25vw, 0.8rem);
+            letter-spacing: 0.06em;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .navbar a:hover { color: var(--ink); background: rgba(255,255,255,0.45); }
+        .navbar-right { margin-left: auto; color: var(--ink-light) !important; }
+
+        /* ─────────────────────────────
+           HEADER
+        ───────────────────────────── */
+        .site-header {
+            text-align: center;
+            padding: 3.5rem 1rem 0;
+        }
+
+        h1 {
+            font-family: var(--serif-sc);
+            font-size: clamp(2rem, 6.5vw, 5.2rem);
+            font-weight: normal;
+            letter-spacing: 0.08em;
+            color: var(--ink);
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+            color: var(--ink-light);
+            letter-spacing: 0.25em;
+            font-style: italic;
+            margin-top: 0.7rem;
+        }
+
+        .header-rule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            margin: 1.8rem auto 0;
+            max-width: 340px;
+            color: var(--pink-deep);
+        }
+
+        .header-rule::before,
+        .header-rule::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--pink-deep);
+        }
+
+        /* ─────────────────────────────
+           HERO IMAGE
+        ───────────────────────────── */
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .hero-image img {
+            max-width: min(260px, 70vw);
+            height: auto;
+            display: block;
+            border: 1px solid var(--pink-deep);
+            box-shadow: 5px 5px 20px rgba(150,70,90,0.2);
+        }
+
+        /* ─────────────────────────────
+           SECTION DIVIDERS
+        ───────────────────────────── */
+        .full-divider {
+            display: flex;
+            align-items: center;
+        }
+
+        .full-divider .bar   { flex: 1; height: 3px; background: var(--ink); }
+        .full-divider .gem   { width: 9px; height: 9px; background: var(--ink); transform: rotate(45deg); margin: 0 7px; flex-shrink: 0; }
+
+        /* ─────────────────────────────
+           SECTION LAYOUT
+        ───────────────────────────── */
+        .section {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 2.5rem);
+        }
+
+        /* ─────────────────────────────
+           SECTION HEADINGS
+        ───────────────────────────── */
+        .section-title {
+            font-family: var(--serif-sc);
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
+            font-weight: normal;
+            text-align: center;
+            color: var(--ink);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.35rem;
+        }
+
+        .ornament {
+            text-align: center;
+            color: var(--pink-deep);
+            font-size: 1rem;
+            letter-spacing: 0.5em;
+            margin: 0.3rem 0 2.2rem;
+        }
+
+        /* category sub-headings */
+        .cat-title {
+            font-family: var(--serif-sc);
+            font-weight: normal;
+            font-size: clamp(0.78rem, 1.6vw, 0.95rem);
+            letter-spacing: 0.18em;
+            color: var(--ink-light);
+            text-align: center;
+            margin: 2.8rem 0 1.1rem;
+        }
+
+        .cat-title span {
+            display: inline-block;
+            border-bottom: 1px solid var(--pink-deep);
+            padding-bottom: 0.3rem;
+        }
+
+        /* ─────────────────────────────
+           ABOUT TEXT
+        ───────────────────────────── */
+        .about-text {
+            font-size: clamp(0.92rem, 1.5vw, 1.04rem);
+            line-height: 1.9;
+            max-width: 760px;
+            margin: 0 auto 1.4rem;
+            text-align: justify;
+        }
+
+        .about-text a { color: var(--ink-soft); }
+
+        /* ─────────────────────────────
+           WORK ENTRIES
+        ───────────────────────────── */
+        .works-grid { max-width: 800px; margin: 0 auto; }
+
+        .work-entry {
+            background: var(--pink-card);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--pink-deep);
+            border-radius: 0 3px 3px 0;
+            padding: 0.8rem 1.1rem;
+            margin-bottom: 0.65rem;
+            font-size: clamp(0.86rem, 1.35vw, 0.97rem);
+            line-height: 1.6;
+            transition: box-shadow 0.2s, border-left-color 0.2s;
+        }
+
+        .work-entry:hover {
+            box-shadow: 2px 3px 12px rgba(150,70,90,0.13);
+            border-left-color: var(--ink-soft);
+        }
+
+        .work-title   { font-style: italic; font-weight: bold; color: var(--ink); }
+        .work-year    { color: var(--ink-light); font-size: 0.9em; }
+        .work-dur     { color: var(--ink-light); font-size: 0.9em; }
+        .work-meta    { color: var(--ink-soft); margin-top: 0.2rem; font-size: 0.93em; }
+        .work-comm    { font-style: italic; color: var(--ink-light); font-size: 0.87em; margin-top: 0.2rem; }
+
+        /* ─────────────────────────────
+           AUDIO PLAYERS
+        ───────────────────────────── */
+        .mp3-wrap { margin-top: 0.65rem; }
+
+        .mp3-label {
+            display: block;
+            font-size: 0.78em;
+            font-style: italic;
+            color: var(--ink-light);
+            margin-bottom: 0.2rem;
+        }
+
+        .mp3-wrap audio { width: min(340px, 100%); outline: none; }
+
+        /* ─────────────────────────────
+           REVIEW ENTRIES
+        ───────────────────────────── */
+        .review-entry {
+            background: var(--pink-card);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 1.1rem 1.3rem;
+            margin-bottom: 0.9rem;
+            font-size: clamp(0.86rem, 1.35vw, 0.97rem);
+        }
+
+        .review-title {
+            font-family: var(--serif-sc);
+            font-weight: normal;
+            letter-spacing: 0.07em;
+            color: var(--ink);
+            font-size: 0.98em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.45rem;
+            margin-bottom: 0.65rem;
+        }
+
+        .review-entry p { line-height: 1.75; color: var(--ink-soft); margin-bottom: 0.5rem; }
+        .review-entry p:last-child { margin-bottom: 0; }
+        .review-source  { font-weight: bold; color: var(--ink); }
+
+        /* ─────────────────────────────
+           SECTION IMAGES
+        ───────────────────────────── */
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            margin: 2.2rem auto;
+        }
+
+        .centered-image img {
+            max-width: min(480px, 90vw);
+            height: auto;
+            border: 1px solid var(--pink-deep);
+            box-shadow: 4px 4px 16px rgba(150,70,90,0.16);
+        }
+
+        /* ─────────────────────────────
+           GALLERY
+        ───────────────────────────── */
+        .gallery-head {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: clamp(2.5rem, 5vw, 4rem) clamp(1.2rem, 5vw, 2.5rem) 0;
+            text-align: center;
+        }
+
+        .gallery-sub {
+            font-style: italic;
+            color: var(--ink-light);
+            font-size: clamp(0.88rem, 1.6vw, 1.05rem);
+            margin-top: 0.4rem;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            padding: 0 clamp(1rem, 4vw, 2.5rem);
+            margin: 1.2rem auto;
+            max-width: 900px;
+        }
+
+        .image-grid img {
+            flex: 1 1 260px;
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border: 1px solid var(--pink-deep);
+            box-shadow: 3px 3px 14px rgba(150,70,90,0.15);
+            transition: box-shadow 0.25s;
+        }
+
+        .image-grid img:hover { box-shadow: 6px 6px 22px rgba(150,70,90,0.28); }
+
+        /* ─────────────────────────────
+           FOOTER
+        ───────────────────────────── */
+        .site-footer { height: 3rem; }
+
+        /* ─────────────────────────────
+           RESPONSIVE
+        ───────────────────────────── */
+        @media (max-width: 560px) {
+            .navbar { justify-content: center; padding: 0 0.4rem; }
+            .navbar-right { margin-left: 0; }
+            .navbar a { padding: 0.65rem 0.65rem; }
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#" class="back-to-top">Back to Top</a>
-        <a href="#branch3">About Margaret Lucy Wilkins</a>
-        <a href="#branch1">Musical Works</a>
-        <a href="#branch2">Musical Reviews</a>
-        <a href="#gal">Gallery</a>
 
-    </div>
+<!-- ── NAVBAR ── -->
+<nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#works">Musical Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#" class="navbar-right">↑ Top</a>
+</nav>
 
+<!-- ── HEADER ── -->
+<header class="site-header">
     <h1>Margaret Lucy Wilkins</h1>
-    <h2>Composer Performer Artist</h2>
-    <!-- Placeholder image centered -->
-    <div class="yay">
-        <img src="WhatsApp Image 2023-08-22 at 12.09.35.jpg" alt="Placeholder Image">
-    </div>
+    <p class="subtitle">Composer &nbsp;·&nbsp; Performer &nbsp;·&nbsp; Artist</p>
+    <div class="header-rule">✦</div>
+</header>
 
-    <!-- Content for Branch 3 -->
-    <div id="branch3" class="section">
-        <h2>About Margaret Lucy Wilkins</h2>
-        <p class="subtext">
-Margaret Lucy Wilkins is a distinguished composer known for her exploration of spatial elements and music theatre, characterized by a strong dramatic, gestural, and visual approach to sound. Born in England in 1939, her illustrious musical career encompasses composing, lecturing, performing, and writing. She has conducted 20th-century music and showcased her talents on medieval instruments with the Scottish Early Music Consort, participating in numerous concerts and broadcasts. From 1976 to 2003, she served as Principal Lecturer in Music at the University of Huddersfield, UK, where she held the position of Head of Composition.
-<br></br>
-Wilkins' passion for composition began early, winning a Junior Exhibition to study at Trinity College of Music, London, at the age of 12. Subsequently, she pursued Music at Nottingham University, UK, achieving B.Mus. (Hons.) and A.Mus.D. degrees.
-<br></br>
-Her works have received widespread recognition, featuring many commissions and broadcasts. Notable awards include the Scottish Arts Council Award for Composers, Hinrichsen Foundation Award for Composers, and Arts Council of Great Britain Bursary for Composers. Additionally, she received prizes such as The New Cantata Orchestra of London Competition for Young British Composers, the Cappiani Prize for Women Composers, and the Miriam Gideon International Prize.
-<br></br>
-Wilkins' compositions have been performed across Europe, the Americas, and Asia, captivating audiences at prominent festivals like Edinburgh International, Huddersfield Contemporary Music Festival, and ISCM World Music Days. Her diverse repertoire spans orchestral, chamber, and electroacoustic music. Noteworthy orchestral works include "Hymn to Creation," "Music of the Spheres," "Revelations of the Seven Angels," and "Symphony."
-<br></br>
-Chamber music works like "Struwwelpeter," "Burnt Sienna: Etude for String Trio," and "Ave Maria" have also earned acclaim. Additionally, her electroacoustic works, such as "Stringsing" and "L’Attente," have left a significant impact. "Discover Oakwell," a long-running sound installation, received the prestigious Sandford Award for Heritage Education.
-<br></br>
-As a fervent advocate of new music, Wilkins has directed numerous performances, promoting works by notable composers like Igor Stravinsky, Anton Webern, Hanna Kulenty, Olivier Messiaen, and others. She holds esteemed roles in music organizations, including the Executive Committee of the Composers’ Guild of Great Britain and the Council of the Society for the Promotion of New Music.
-<br></br>
-Margaret Lucy Wilkins' publications include the album "Free Spirit: the Music of Margaret Lucy Wilkins," the DVD "Revelations of the Seven Angels," and the book "Creative Music Composition: the Young Composer’s Voice." For those interested in her work, she can be contacted via email at margaretlucywilkins@btinternet.com</p>
-        <!-- Image slot for Branch 3 -->
-        <div class="centered-image">
-            <img src="suii.jpg" alt="Branch 3 Image">
-            
+<div class="hero-image">
+    <img src="WhatsApp Image 2023-08-22 at 12.09.35.jpg" alt="Margaret Lucy Wilkins">
+</div>
+
+<!-- ════════════════════════════════
+     ABOUT
+════════════════════════════════ -->
+<div class="full-divider"><div class="bar"></div><div class="gem"></div><div class="bar"></div></div>
+
+<section id="about" class="section">
+    <h2 class="section-title">About Margaret Lucy Wilkins</h2>
+    <p class="ornament">· · · ✦ · · ·</p>
+
+    <p class="about-text">Margaret Lucy Wilkins is a distinguished composer known for her exploration of spatial elements and music theatre, characterised by a strong dramatic, gestural, and visual approach to sound. Born in England in 1939, her illustrious musical career encompasses composing, lecturing, performing, and writing. She has conducted 20th-century music and showcased her talents on medieval instruments with the Scottish Early Music Consort, participating in numerous concerts and broadcasts. From 1976 to 2003, she served as Principal Lecturer in Music at the University of Huddersfield, UK, where she held the position of Head of Composition.</p>
+
+    <p class="about-text">Wilkins' passion for composition began early, winning a Junior Exhibition to study at Trinity College of Music, London, at the age of 12. Subsequently, she pursued Music at Nottingham University, UK, achieving B.Mus. (Hons.) and A.Mus.D. degrees.</p>
+
+    <p class="about-text">Her works have received widespread recognition, featuring many commissions and broadcasts. Notable awards include the Scottish Arts Council Award for Composers, Hinrichsen Foundation Award for Composers, and Arts Council of Great Britain Bursary for Composers. She also received prizes such as The New Cantata Orchestra of London Competition for Young British Composers, the Cappiani Prize for Women Composers, and the Miriam Gideon International Prize.</p>
+
+    <p class="about-text">Wilkins' compositions have been performed across Europe, the Americas, and Asia, captivating audiences at prominent festivals including Edinburgh International, Huddersfield Contemporary Music Festival, and ISCM World Music Days. Her diverse repertoire spans orchestral, chamber, and electroacoustic music. Noteworthy orchestral works include <em>Hymn to Creation</em>, <em>Music of the Spheres</em>, <em>Revelations of the Seven Angels</em>, and <em>Symphony</em>.</p>
+
+    <p class="about-text">Chamber works such as <em>Struwwelpeter</em>, <em>Burnt Sienna: Etude for String Trio</em>, and <em>Ave Maria</em> have also earned wide acclaim. Her electroacoustic works, including <em>Stringsing</em> and <em>L'Attente</em>, have left a significant impact, while <em>Discover Oakwell</em>, a long-running sound installation, received the prestigious Sandford Award for Heritage Education.</p>
+
+    <p class="about-text">As a fervent advocate of new music, Wilkins has directed numerous performances, promoting works by notable composers such as Igor Stravinsky, Anton Webern, Hanna Kulenty, and Olivier Messiaen. She holds esteemed roles in music organisations including the Executive Committee of the Composers' Guild of Great Britain and the Council of the Society for the Promotion of New Music.</p>
+
+    <p class="about-text">Her publications include the album <em>Free Spirit: the Music of Margaret Lucy Wilkins</em>, the DVD <em>Revelations of the Seven Angels</em>, and the book <em>Creative Music Composition: the Young Composer's Voice</em>. She can be contacted at <a href="mailto:margaretlucywilkins@btinternet.com">margaretlucywilkins@btinternet.com</a>.</p>
+
+    <div class="centered-image"><img src="suii.jpg" alt="Margaret Lucy Wilkins"></div>
+    <div class="centered-image"><img src="Screenshot 2023-08-30 085906.png" alt="Margaret Lucy Wilkins"></div>
+</section>
+
+<!-- ════════════════════════════════
+     MUSICAL WORKS
+════════════════════════════════ -->
+<div class="full-divider"><div class="bar"></div><div class="gem"></div><div class="bar"></div></div>
+
+<section id="works" class="section">
+    <h2 class="section-title">Musical Works</h2>
+    <p class="ornament">· · · ✦ · · ·</p>
+
+    <!-- ORCHESTRAL -->
+    <h3 class="cat-title"><span>Orchestral Works</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Dance Variations</span> <span class="work-year">(1973)</span> <span class="work-dur">— 11'</span></div>
+            <div class="work-meta">Harpsichord / strings: 6 6 3 2 1</div>
+            <div class="work-comm">Commissioned by The University of St. Andrews Chamber Orchestra, funded by Scottish Arts Council.</div>
         </div>
-        <div class="centered-image">
-            <img src="Screenshot 2023-08-30 085906.png" alt="Branch 2 Image">
+        <div class="work-entry">
+            <div><span class="work-title">Hymn to Creation</span> <span class="work-year">(1973)</span> <span class="work-dur">— 9'</span></div>
+            <div class="work-meta">3333 / 433 / 1T 3P / 7 6 5 4 3</div>
         </div>
-    </div>
-
-    
-    <!-- Content for Branch 1 -->
-    <div id="branch1" class="section">
-        <h2>Musical Works from Margaret Lucy Wilkins</h2>
-        
-<h3>Orchestral Works:</h3>
-
-<br></br>
-
-1. Dance Variations (1973) - 11’
-harpsichord/strings: 6 6 3 2 1
-Commissioned by The University of St. Andrews Chamber Orchestra, funded by Scottish Arts Council.
-<br></br>
-2. Hymn to Creation (1973) - 9’
-
-3333/433/1T 3P/7 6 5 4 3
-<br></br>
-3. Music of the Spheres (1975) - 17’
-
-Commissioned by BBC.
-333(+ bass cl) 3/4331/hrp/1T 3P/12 10 8 6 4
-<br></br>
-4. Revelations of the Seven Angels (1988) - c. 50’
-
-solo sop/cathedral choir/string quartet/orchestra: 2131/2431/hrp/guitar/celeste-harpsichord/2 descant recorders/2P/strings: 12 10 8 8 6
-<br></br>
-5. Symphony 1989 - 22’
-
-3333/4331/1T 2P/16 14 12 10 8
-        <div class="mp3-player">
-            <audio controls>
-                <source src="Symphony.mp3" type="audio/mpeg">
-                    
-            </audio>
+        <div class="work-entry">
+            <div><span class="work-title">Music of the Spheres</span> <span class="work-year">(1975)</span> <span class="work-dur">— 17'</span></div>
+            <div class="work-meta">333 (+ bass cl) 3 / 4331 / hrp / 1T 3P / 12 10 8 6 4</div>
+            <div class="work-comm">Commissioned by BBC.</div>
         </div>
-<br></br>
-    </p>
-    <p class="subtext">
-6. Musica Angelorum (1991) - 10’ 30”
-
-Commissioned by Goldberg Ensemble, funded by a Holst Foundation Award
-solo strings: 4 3 2 2 1
-        <br></br>
-<h3>Instrumental Ensemble:</h3>
-
-<br></br>
-
-1. Orpheus (1973) - 14’
-violin & piano
-<br></br>
-2. Burnt Sienna: Etude for string trio (1974) - 9’
-
-violin/viola/cello
-<br></br>
-3. Circus (1975) - 13’
-
-flute/clarinet/bass clarinet/horn/trumpet/violin/double bass/1 percussion/piano
-<br></br>
-4. Aspects of Night (1981) - 10’ 30”
-
-Commissioned by John Turner, funded by North West Arts.
-recorder/s (1 player) & guitar
-version for recorder/s (1 player) & harpsichord
-<br></br>
-5. Pirouette for solo oboe - 3’
-
-<br></br>
-6. Pas de Quatre for 4 oboes - 5’
-
-Modern Wind Music, vol.2, ed. John Turner, Forsyth (Manchester, UK, 1985)
-<br></br>
-7. Circuit for bassoon & piano - 3’ 30”
-
-Modern Wind Music, vol.4, ed. John Turner, Forsyth (Manchester, UK, 1986)
-<br></br>
-8. Epistola da San Marco (1987) - 10’
-
-brass band
-<br></br>
-9. Réve, Réveil, Révelation, Réverbérations (1988) - 13’
-
-alto flute/clarinet/bass clarinet/bassoon/guitar/harp/vibraphone/marimba/DX7.2/4 violins/cello/double bass
-<br></br>
-10. A Baker’s Dozen (1994) - 1’
-* descant recorder & piano
-
-<br></br>
-11. Trompettes de Mort (2003) - c. 10’
-* Commissioned by Philip Mead with financial assistance from Thames Valley University
-* 2 trumpets, horn, trombone, tuba, piano
-
-<br></br>
-12. Lullaby for Jesus (2010) - 6'
-* String quartet
-
-<br></br>
-13. Fanfare for Colchester (2011) - 2'
-* Brass quintet
-<br></br>
-<h3>Works for Voice and Ensemble:</h3>
-
-<br></br>
-
-1. Witch Music (1971) - 10’
-mezzo-soprano/clarinet/trumpet/double bass/finger cymbals suspended from a large cross
-<br></br>
-2. Struwwelpeter (1973) - 14’- A mixture of 6 pieces performed by the Firebird Ensamble
-
-soprano/3 clarinets/piano/1 percussion
-        <div class="mp3-player">
-            <audio controls>
-                <source src="strudle.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+        <div class="work-entry">
+            <div><span class="work-title">Revelations of the Seven Angels</span> <span class="work-year">(1988)</span> <span class="work-dur">— c. 50'</span></div>
+            <div class="work-meta">Solo soprano / cathedral choir / string quartet / orchestra: 2131 / 2431 / hrp / guitar / celeste–harpsichord / 2 descant recorders / 2P / strings: 12 10 8 8 6</div>
         </div>
-    </p>
-    
-        Cruel Frederick <br></br>
-        <div class="mp3-player">
-            <audio controls>
-                <source src="Cruel.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+        <div class="work-entry">
+            <div><span class="work-title">Symphony</span> <span class="work-year">(1989)</span> <span class="work-dur">— 22'</span></div>
+            <div class="work-meta">3333 / 4331 / 1T 2P / 16 14 12 10 8</div>
+            <div class="mp3-wrap">
+                <span class="mp3-label">Listen — Symphony</span>
+                <audio controls><source src="Symphony.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            </div>
         </div>
-
-<br></br>
-3. Ave Maria (1975) - 30’
-
-mezzo-soprano/flute/clarinet/violin/viola/cello/harp/piano/1 percussion
-Commissioned by the New Music Group of Scotland, funded by the Scottish Arts Council.
-<br></br>
-4. L’Allegro (1977) - 20’
-
-countertenor/harpsichord/recorders(1 player): sopranino, descant, treble, bass.
-Commissioned by John Turner, funded by the Arts Council of Great Britain.
-<br></br>
-5. The Tree of Life (1979) - 45’
-
-tenor/baritone/bass/flute/clarinet/piano/violin/cello/1 percussion
-A complementary work for Ave Maria.
-<br></br>
-6. Playtime (1985) - 16’
-
-Commissioned by Kirklees Primary Schools Music Festival, funded by Yorkshire Arts Association and Marks and Spencer plc.
-children’s voices/flute/clarinet/trumpet/violin/cello/double bass/piano.
-version for: children’s voices/piano.
-<br></br>
-7. Folkworks (1996) - 13’
-
-countertenor (alto)/cello/harpsichord.
-<br></br>
-8. BallyMo (1998) - 3’
-
-medium voice/bass + descant recorders (1 player)
-        <br></br>
-<h3>Works for Solo Instruments:</h3>
-
-<br></br>
-
-1. A Dance to the Music of Time (1980) - 10’ 30”
-Commissioned by Alan Cuckston, funded by Yorkshire Arts Association.
-solo harpsichord
-<br></br>
-2. Deus ex Machina (1982) - 5’
-
-Commissioned by Keith Jarvis, funded by Yorkshire Arts Association.
-solo organ
-<br></br>
-3. Aries for descant recorder - 5’
-
-Pieces for Solo Recorder, vol.1, ed. John Turner, Forsyth (Manchester, UK, 1988)
-<br></br>
-4. A Joyful Noise! (1988) - 2’- 4’
-
-solo organ
-<br></br>
-5. 366” for solo trombone (1986) - 6’ 6”
-
-Trombone Association Publishing, (MA, USA,1988)
-<br></br>
-6. Study in Black & White No.1 (1983) - 6’
-
-solo piano
-        <div class="mp3-player">
-            <audio controls>
-                <source src="black and white.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-<br></br>
-7. Study in Black & White No.2 (1992) - 3’. 30”
-
-solo piano
-<br></br>
-8. Study in Black & White No.3 (1995) - 4’. 30”
-
-solo piano
-British Contemporary Music Anthology 1996-97 (Telford, UK, 1997)
-        <br></br>
-<h3>Electroacoustic Works:</h3>
-
-<br></br>
-
-1. Music for an Exhibition (1970)
-Commissioned by Exhibition of Modern Sculpture; Ledlanet, Scotland (with financial assistance from The Scottish Arts Council).
-musique concrète; sound installation.
-<br></br>
-2. Sci-Fi (1973)
-
-sound installation
-commissioned by University of St. Andrews Dpt. of Fine Art (with financial assistance from Scottish Arts Council); Science Fiction Exhibition, St. Andrews Arts Festival.
-<br></br>
-3. Lest We Forget (1982) - 25’
-
-solo SATB/live electronics/tape
-<br></br>
-4. The Cello In My Life (1989) - 12’. 30”
-
-cello/piano/live electronics (2 x Yamaha SPX 90)
-<br></br>
-5. KANAL (1990) - 60’- 90’
-
-A multi-media environmental event, for solo oboe (or clarinet, or trumpet)/singers/actors/dancers/brass/percussion/electronic tapes (stereo)
-<br></br>
-6. Stringsing (1992) - 18’. 15”
-
-Commissioned by Julie Wilson, choreographer.
-electroacoustic music for dance/stereo DAT
-        <div class="mp3-player">
-            <audio controls>
-                <source src="Stringsing.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        </div>
-
-<br></br>
-7. L’Attente (1994) - 15’
-
-electracoustic music for dance/stereo DAT
-<br></br>
-8. Discover Oakwell (1995) - 21’. 30”
-
-Commissioned by Oakwell Hall, funded by Yorkshire & Humberside Arts Kirklees Cultural Services and the European Commission.
-Won a Sandford Award for Heritage Education, 1999
-electroacoustic sound installation/4 stereo DATs
-<br></br>
-9. Fearful Apathy (1997) - 8’
-
-octophonic DAT
-Text by Pastor Niemoeller
-        <br></br>
-<h3>Works for Choir:</h3>
-
-<br></br>
-
-1. Three Skelmanthorpe Carols (1980) - 6’
-Commissioned by the Skelmanthorpe Male Voice Choir, funded by Yorkshire Arts Association.
-male voice choir: 2T/ 2 B
-<br></br>
-2. Gitanjali (1981) - 16’. 30”
-
-Commissioned by the William Byrd Singers.
-Minimum 16 voices: 4 soprano/4 alto/4 tenor/4 Bass with SATB soloists drawn from the choir.
-<br></br>
-3. Ring Out, Wild Bells (1997) - 8’
-
-Written for the Vatican Millennium Commission
-unison voices/organ
-<br></br>
-4. Ring Out, Wild Bells (1997) - 9’. 30”
-
-Written for the Vatican Millennium Commission
-SATB (4-8 parts)/organ
-        <br></br>
-<h3>Works for Students, Young Musicians, Amateur Musicians:</h3>
-
-<br></br>
-
-1. Pirouette for solo oboe - 3’
-<br></br>
-2. Pas de Quatre for 4 oboes - 5’
-
-Modern Wind Music, vol. 2, ed. John Turner, Forsyth (Manchester, UK, 1985)
-<br></br>
-3. Playtime (1985) - 16’
-
-Commissioned by Kirklees Primary Schools Music Festival, funded by Yorkshire Arts Association and Marks and Spencer plc.
-children’s voices/flute/clarinet/trumpet/violin/cello/double bass/piano.
-version for: children’s voices/piano.
-<br></br>
-4. Epistola da San Marco (1987) - 10’
-
-brass band
-<br></br>
-5. KANAL (1990) - 60’- 90’
-
-A multi-media environmental event, for solo oboe (or clarinet, or trumpet)/singers/actors/dancers/brass/percussion/electronic tapes (stereo)
-<br></br>
-6. Ring Out, Wild Bells (1997) - 8’
-
-Written for the Vatican Millennium Commission
-unison voices/organ
-<br></br>
-7. Rituelle (1999) - c. 16’
-
-7 mobile groups: 5 flutes/5 clarinets/4 horns/3 trumpets/3 trombones/1 flute, 1 clarinet, 1 trumpet, 1 trombone/2 timps. + 1 tubular bells.
-    
-
-
-        <!-- Image slot for Branch 1 -->
-
-        <div class="centered-image">
-            <img src="WhatsApp Image 2023-08-22 at 12.09.34.jpg" alt="Branch 1 Image">
-        </div>
-        <div class="centered-image">
-            <img src="Screenshot 2023-08-30 085701.png" alt="Branch 2 Image">
+        <div class="work-entry">
+            <div><span class="work-title">Musica Angelorum</span> <span class="work-year">(1991)</span> <span class="work-dur">— 10' 30"</span></div>
+            <div class="work-meta">Solo strings: 4 3 2 2 1</div>
+            <div class="work-comm">Commissioned by Goldberg Ensemble, funded by a Holst Foundation Award.</div>
         </div>
     </div>
-    
-    <!-- Content for Branch 2 -->
-    <div id="branch2" class="section">
-        <h2>Musical Reviews</h2>
-        <p class="subtext">
 
-Hymn to Creation (1973):
-
-Glasgow Herald: "Textures of extreme clarity and the sense of natural growth the music gives, make this a fascinating and compelling work."<br></br>
-Scotsman: "...a keen feeling for punchy orchestral colours and rhythms with a sometimes Straussian sense of humour."<br></br>
-Musica Angelorum (1991):
-
-Malcolm Cruise, Huddersfield Examiner: "Musica Angelorum, inspired by medieval paintings portraying multitudes of angels playing instruments, has a marvellously wrought shape. And unlike the oft-heard fragmentary style honoured by many living composers, it displayed, in this splendid performance, a pleasing continuity which generated keen anticipation."<br></br>
-Simon Cargill, Yorkshire Post: "...The elevated euphony of Margaret Lucy Wilkins’ Musica Angelorum was all the more welcome...this new score, with its references to the angelic instrumentalists that populate medieval art, emerged freshly minted in a concert pervaded by the all too familiar gambits of the avant-garde’s more recent offerings."<br></br>
-Hubert Culot, BBC Music Magazine: "Musica Angelorum for string orchestra is another study in string writing and, in every respect, as successful and attractive as Burnt Sienna. Many arresting moments in this atmospheric piece that vastly repays repeated hearings. Wilkins has a real feeling for and liking of string textures."<br></br>
-Orpheus (1973):
-
-Times Educational Supplement: "Contains many interesting passages where plucked notes inside the piano were made to balance structurally against pizzicato and tremolando effects from the violin."<br></br>
-Burnt Sienna: Etude for String Trio (1974):
-
-Scotsman: "A series of studies, cogently and excitingly presented of the different dramatic sonorities obtainable from a string trio."<br></br>
-Aspects of Night (1981):
-
-Michael Ball: "...marvellous humour and variety of gesture.... richly entertaining...the inventiveness and sense of colour in small spaces."<br></br>
-Epistola da San Marco (1987):
-
-David Briers, Huddersfield Examiner: "A powerful essay for brass band, with trumpets thundering at the back of the hall."<br></br>
-Playtime (1985):
-
-Huddersfield Examiner: "Local children’s poems are the inspiration behind the piece and though there is nothing straightforward about the music’s tonality or structure, the children took it warmly to their hearts."<br></br>
-A Dance to the Music of Time (1980):
-
-Huddersfield Examiner: "...a delicate woven subject, treated in a precise and disciplined manner, though managing without seeming effort, to create endlessness, a feeling of suspension, maintained despite lively rhythmic pulses."<br></br>
-Study in Black & White No.1 (1983):
-
-Meirion Bowen, Guardian: "A notable exception extended a Bartokian idiom with power, panache and real ingenuity."<br></br>
-Study in Black & White No.2 (1992):
-
-Dmitri van der Werf, De Haagse Courant: "Heel wat verrassender waren Margaret Lucy Wilkins’ bijzonder overtuigende Study in Black & White No.2."<br></br>
-KANAL (1990):
-
-David Hammond, Huddersfield Examiner: "KANAL implies a channel - a way through - as well as a canal. It is an intriguing, metaphoric title for an intriguing work, which makes use of texts from writers as far apart as Blake and Brecht, and mixes words and music, movement and light, in an abstract, and at times quite exciting fashion.... Apart from the solo oboe and percussion, most of the live music comes from a large number of brass players, in different locations, and the score provides for a rich texture of resonant sound, rising, falling and echoing in its important contribution to the atmosphere of this unusual, original and engrossing work."<br></br>
-Stringsing (1992):
-
-Stephen Barber, Event Magazine: "This was a powerful, engrossing and disturbing piece."<br></br>
-Ramsey Burt, Yorkshire Evening Post: "Julie Wilson’s choreographed duets and the Margaret Lucy Wilkins music for Strung Out start at maximum emotional pitch so that one wonders how they can possibly develop - but they do, in a bleak look at a relationship gone sour."<br></br>
-Three Skelmanthorpe Carols (1980):
-
-Wakefield Examiner: "Such is their high musical quality there is no doubt that the carols will grace many a Christmas program for years to come."<br></br></p>
+    <!-- INSTRUMENTAL ENSEMBLE -->
+    <h3 class="cat-title"><span>Instrumental Ensemble</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Orpheus</span> <span class="work-year">(1973)</span> <span class="work-dur">— 14'</span></div>
+            <div class="work-meta">Violin &amp; piano</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Burnt Sienna: Etude for String Trio</span> <span class="work-year">(1974)</span> <span class="work-dur">— 9'</span></div>
+            <div class="work-meta">Violin / viola / cello</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Circus</span> <span class="work-year">(1975)</span> <span class="work-dur">— 13'</span></div>
+            <div class="work-meta">Flute / clarinet / bass clarinet / horn / trumpet / violin / double bass / 1 percussion / piano</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Aspects of Night</span> <span class="work-year">(1981)</span> <span class="work-dur">— 10' 30"</span></div>
+            <div class="work-meta">Recorder/s (1 player) &amp; guitar; also version with harpsichord</div>
+            <div class="work-comm">Commissioned by John Turner, funded by North West Arts.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Pirouette</span> <span class="work-dur">— 3'</span></div>
+            <div class="work-meta">Solo oboe</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Pas de Quatre</span> <span class="work-dur">— 5'</span></div>
+            <div class="work-meta">4 oboes</div>
+            <div class="work-comm">Modern Wind Music, vol. 2, ed. John Turner, Forsyth (Manchester, UK, 1985)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Circuit</span> <span class="work-dur">— 3' 30"</span></div>
+            <div class="work-meta">Bassoon &amp; piano</div>
+            <div class="work-comm">Modern Wind Music, vol. 4, ed. John Turner, Forsyth (Manchester, UK, 1986)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Epistola da San Marco</span> <span class="work-year">(1987)</span> <span class="work-dur">— 10'</span></div>
+            <div class="work-meta">Brass band</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Réve, Réveil, Révelation, Réverbérations</span> <span class="work-year">(1988)</span> <span class="work-dur">— 13'</span></div>
+            <div class="work-meta">Alto flute / clarinet / bass clarinet / bassoon / guitar / harp / vibraphone / marimba / DX7.2 / 4 violins / cello / double bass</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">A Baker's Dozen</span> <span class="work-year">(1994)</span> <span class="work-dur">— 1'</span></div>
+            <div class="work-meta">Descant recorder &amp; piano</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Trompettes de Mort</span> <span class="work-year">(2003)</span> <span class="work-dur">— c. 10'</span></div>
+            <div class="work-meta">2 trumpets, horn, trombone, tuba, piano</div>
+            <div class="work-comm">Commissioned by Philip Mead with financial assistance from Thames Valley University.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Lullaby for Jesus</span> <span class="work-year">(2010)</span> <span class="work-dur">— 6'</span></div>
+            <div class="work-meta">String quartet</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Fanfare for Colchester</span> <span class="work-year">(2011)</span> <span class="work-dur">— 2'</span></div>
+            <div class="work-meta">Brass quintet</div>
+        </div>
     </div>
-    <div class="black-line"></div>
-    <div id="gal" class="section">
-        <h1>Gallery</h1>
-        <h2>Just some of Margaret Lucy Wilkins' paintings</h2>
-    <div class="image-container">
-        <img src="8649_r_800x640.jpeg" alt="Image 1">
-        <img src="3692_r_800x640.jpeg" alt="Image 2">
+
+    <!-- VOICE AND ENSEMBLE -->
+    <h3 class="cat-title"><span>Works for Voice and Ensemble</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Witch Music</span> <span class="work-year">(1971)</span> <span class="work-dur">— 10'</span></div>
+            <div class="work-meta">Mezzo-soprano / clarinet / trumpet / double bass / finger cymbals suspended from a large cross</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Struwwelpeter</span> <span class="work-year">(1973)</span> <span class="work-dur">— 14'</span></div>
+            <div class="work-meta">Soprano / 3 clarinets / piano / 1 percussion — a mixture of 6 pieces performed by the Firebird Ensemble</div>
+            <div class="mp3-wrap">
+                <span class="mp3-label">Listen — Struwwelpeter</span>
+                <audio controls><source src="strudle.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            </div>
+            <div class="mp3-wrap" style="margin-top:0.55rem;">
+                <span class="mp3-label">Listen — Cruel Frederick</span>
+                <audio controls><source src="Cruel.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            </div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Ave Maria</span> <span class="work-year">(1975)</span> <span class="work-dur">— 30'</span></div>
+            <div class="work-meta">Mezzo-soprano / flute / clarinet / violin / viola / cello / harp / piano / 1 percussion</div>
+            <div class="work-comm">Commissioned by the New Music Group of Scotland, funded by the Scottish Arts Council.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">L'Allegro</span> <span class="work-year">(1977)</span> <span class="work-dur">— 20'</span></div>
+            <div class="work-meta">Countertenor / harpsichord / recorders (1 player): sopranino, descant, treble, bass</div>
+            <div class="work-comm">Commissioned by John Turner, funded by the Arts Council of Great Britain.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">The Tree of Life</span> <span class="work-year">(1979)</span> <span class="work-dur">— 45'</span></div>
+            <div class="work-meta">Tenor / baritone / bass / flute / clarinet / piano / violin / cello / 1 percussion — a complementary work for <em>Ave Maria</em></div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Playtime</span> <span class="work-year">(1985)</span> <span class="work-dur">— 16'</span></div>
+            <div class="work-meta">Children's voices / flute / clarinet / trumpet / violin / cello / double bass / piano; also version for children's voices / piano</div>
+            <div class="work-comm">Commissioned by Kirklees Primary Schools Music Festival, funded by Yorkshire Arts Association and Marks and Spencer plc.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Folkworks</span> <span class="work-year">(1996)</span> <span class="work-dur">— 13'</span></div>
+            <div class="work-meta">Countertenor (alto) / cello / harpsichord</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">BallyMo</span> <span class="work-year">(1998)</span> <span class="work-dur">— 3'</span></div>
+            <div class="work-meta">Medium voice / bass + descant recorders (1 player)</div>
+        </div>
     </div>
-    <div class="image-container">
-        <img src="3690_r_800x640.jpeg" alt="Image 1">
-        <img src="3691_r_800x640.jpeg" alt="Image 2">
+
+    <!-- SOLO INSTRUMENTS -->
+    <h3 class="cat-title"><span>Works for Solo Instruments</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">A Dance to the Music of Time</span> <span class="work-year">(1980)</span> <span class="work-dur">— 10' 30"</span></div>
+            <div class="work-meta">Solo harpsichord</div>
+            <div class="work-comm">Commissioned by Alan Cuckston, funded by Yorkshire Arts Association.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Deus ex Machina</span> <span class="work-year">(1982)</span> <span class="work-dur">— 5'</span></div>
+            <div class="work-meta">Solo organ</div>
+            <div class="work-comm">Commissioned by Keith Jarvis, funded by Yorkshire Arts Association.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Aries</span> <span class="work-dur">— 5'</span></div>
+            <div class="work-meta">Descant recorder</div>
+            <div class="work-comm">Pieces for Solo Recorder, vol. 1, ed. John Turner, Forsyth (Manchester, UK, 1988)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">A Joyful Noise!</span> <span class="work-year">(1988)</span> <span class="work-dur">— 2'–4'</span></div>
+            <div class="work-meta">Solo organ</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">366"</span> <span class="work-year">(1986)</span> <span class="work-dur">— 6' 6"</span></div>
+            <div class="work-meta">Solo trombone</div>
+            <div class="work-comm">Trombone Association Publishing (MA, USA, 1988)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Study in Black &amp; White No. 1</span> <span class="work-year">(1983)</span> <span class="work-dur">— 6'</span></div>
+            <div class="work-meta">Solo piano</div>
+            <div class="mp3-wrap">
+                <span class="mp3-label">Listen — Study in Black &amp; White No. 1</span>
+                <audio controls><source src="black and white.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            </div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Study in Black &amp; White No. 2</span> <span class="work-year">(1992)</span> <span class="work-dur">— 3' 30"</span></div>
+            <div class="work-meta">Solo piano</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Study in Black &amp; White No. 3</span> <span class="work-year">(1995)</span> <span class="work-dur">— 4' 30"</span></div>
+            <div class="work-meta">Solo piano</div>
+            <div class="work-comm">British Contemporary Music Anthology 1996–97 (Telford, UK, 1997)</div>
+        </div>
     </div>
 
+    <!-- ELECTROACOUSTIC -->
+    <h3 class="cat-title"><span>Electroacoustic Works</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Music for an Exhibition</span> <span class="work-year">(1970)</span></div>
+            <div class="work-meta">Musique concrète; sound installation</div>
+            <div class="work-comm">Commissioned by Exhibition of Modern Sculpture, Ledlanet, Scotland, funded by The Scottish Arts Council.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Sci-Fi</span> <span class="work-year">(1973)</span></div>
+            <div class="work-meta">Sound installation</div>
+            <div class="work-comm">Commissioned by University of St. Andrews Dept. of Fine Art; Science Fiction Exhibition, St. Andrews Arts Festival.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Lest We Forget</span> <span class="work-year">(1982)</span> <span class="work-dur">— 25'</span></div>
+            <div class="work-meta">Solo SATB / live electronics / tape</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">The Cello In My Life</span> <span class="work-year">(1989)</span> <span class="work-dur">— 12' 30"</span></div>
+            <div class="work-meta">Cello / piano / live electronics (2 × Yamaha SPX 90)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">KANAL</span> <span class="work-year">(1990)</span> <span class="work-dur">— 60'–90'</span></div>
+            <div class="work-meta">Multi-media environmental event for solo oboe (or clarinet, or trumpet) / singers / actors / dancers / brass / percussion / electronic tapes (stereo)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Stringsing</span> <span class="work-year">(1992)</span> <span class="work-dur">— 18' 15"</span></div>
+            <div class="work-meta">Electroacoustic music for dance / stereo DAT</div>
+            <div class="work-comm">Commissioned by Julie Wilson, choreographer.</div>
+            <div class="mp3-wrap">
+                <span class="mp3-label">Listen — Stringsing</span>
+                <audio controls><source src="Stringsing.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+            </div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">L'Attente</span> <span class="work-year">(1994)</span> <span class="work-dur">— 15'</span></div>
+            <div class="work-meta">Electroacoustic music for dance / stereo DAT</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Discover Oakwell</span> <span class="work-year">(1995)</span> <span class="work-dur">— 21' 30"</span></div>
+            <div class="work-meta">Electroacoustic sound installation / 4 stereo DATs — awarded the Sandford Award for Heritage Education, 1999</div>
+            <div class="work-comm">Commissioned by Oakwell Hall, funded by Yorkshire &amp; Humberside Arts, Kirklees Cultural Services, and the European Commission.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Fearful Apathy</span> <span class="work-year">(1997)</span> <span class="work-dur">— 8'</span></div>
+            <div class="work-meta">Octophonic DAT — text by Pastor Niemöller</div>
+        </div>
+    </div>
 
-    <script>
-        // Smooth scrolling when clicking on navbar links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+    <!-- CHOIR -->
+    <h3 class="cat-title"><span>Works for Choir</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Three Skelmanthorpe Carols</span> <span class="work-year">(1980)</span> <span class="work-dur">— 6'</span></div>
+            <div class="work-meta">Male voice choir: 2T / 2B</div>
+            <div class="work-comm">Commissioned by the Skelmanthorpe Male Voice Choir, funded by Yorkshire Arts Association.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Gitanjali</span> <span class="work-year">(1981)</span> <span class="work-dur">— 16' 30"</span></div>
+            <div class="work-meta">Minimum 16 voices: 4 soprano / 4 alto / 4 tenor / 4 bass with SATB soloists drawn from the choir</div>
+            <div class="work-comm">Commissioned by the William Byrd Singers.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Ring Out, Wild Bells</span> <span class="work-year">(1997)</span> <span class="work-dur">— 8'</span></div>
+            <div class="work-meta">Unison voices / organ</div>
+            <div class="work-comm">Written for the Vatican Millennium Commission.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Ring Out, Wild Bells</span> <span class="work-year">(1997)</span> <span class="work-dur">— 9' 30"</span></div>
+            <div class="work-meta">SATB (4–8 parts) / organ</div>
+            <div class="work-comm">Written for the Vatican Millennium Commission.</div>
+        </div>
+    </div>
 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Scroll to the top when clicking on "Back to Top" button
-        document.querySelector(".back-to-top").addEventListener("click", function(e) {
+    <!-- STUDENTS -->
+    <h3 class="cat-title"><span>Works for Students, Young &amp; Amateur Musicians</span></h3>
+    <div class="works-grid">
+        <div class="work-entry">
+            <div><span class="work-title">Pirouette</span> <span class="work-dur">— 3'</span></div>
+            <div class="work-meta">Solo oboe</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Pas de Quatre</span> <span class="work-dur">— 5'</span></div>
+            <div class="work-meta">4 oboes — Modern Wind Music, vol. 2, ed. John Turner, Forsyth (Manchester, UK, 1985)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Playtime</span> <span class="work-year">(1985)</span> <span class="work-dur">— 16'</span></div>
+            <div class="work-meta">Children's voices / flute / clarinet / trumpet / violin / cello / double bass / piano; also version for children's voices / piano</div>
+            <div class="work-comm">Commissioned by Kirklees Primary Schools Music Festival, funded by Yorkshire Arts Association and Marks and Spencer plc.</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Epistola da San Marco</span> <span class="work-year">(1987)</span> <span class="work-dur">— 10'</span></div>
+            <div class="work-meta">Brass band</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">KANAL</span> <span class="work-year">(1990)</span> <span class="work-dur">— 60'–90'</span></div>
+            <div class="work-meta">Multi-media environmental event for solo oboe (or clarinet, or trumpet) / singers / actors / dancers / brass / percussion / electronic tapes (stereo)</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Ring Out, Wild Bells</span> <span class="work-year">(1997)</span> <span class="work-dur">— 8'</span></div>
+            <div class="work-meta">Unison voices / organ — written for the Vatican Millennium Commission</div>
+        </div>
+        <div class="work-entry">
+            <div><span class="work-title">Rituelle</span> <span class="work-year">(1999)</span> <span class="work-dur">— c. 16'</span></div>
+            <div class="work-meta">7 mobile groups: 5 flutes / 5 clarinets / 4 horns / 3 trumpets / 3 trombones / 1 fl + 1 cl + 1 tpt + 1 tbn / 2 timps + 1 tubular bells</div>
+        </div>
+    </div>
+
+    <div class="centered-image"><img src="WhatsApp Image 2023-08-22 at 12.09.34.jpg" alt="Margaret Lucy Wilkins"></div>
+    <div class="centered-image"><img src="Screenshot 2023-08-30 085701.png" alt="Margaret Lucy Wilkins"></div>
+</section>
+
+<!-- ════════════════════════════════
+     REVIEWS
+════════════════════════════════ -->
+<div class="full-divider"><div class="bar"></div><div class="gem"></div><div class="bar"></div></div>
+
+<section id="reviews" class="section">
+    <h2 class="section-title">Musical Reviews</h2>
+    <p class="ornament">· · · ✦ · · ·</p>
+
+    <div class="works-grid">
+
+        <div class="review-entry">
+            <div class="review-title">Hymn to Creation &nbsp;(1973)</div>
+            <p><span class="review-source">Glasgow Herald:</span> "Textures of extreme clarity and the sense of natural growth the music gives, make this a fascinating and compelling work."</p>
+            <p><span class="review-source">Scotsman:</span> "…a keen feeling for punchy orchestral colours and rhythms with a sometimes Straussian sense of humour."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Musica Angelorum &nbsp;(1991)</div>
+            <p><span class="review-source">Malcolm Cruise, Huddersfield Examiner:</span> "<em>Musica Angelorum</em>, inspired by medieval paintings portraying multitudes of angels playing instruments, has a marvellously wrought shape…it displayed, in this splendid performance, a pleasing continuity which generated keen anticipation."</p>
+            <p><span class="review-source">Simon Cargill, Yorkshire Post:</span> "The elevated euphony of Margaret Lucy Wilkins' <em>Musica Angelorum</em> was all the more welcome…this new score…emerged freshly minted in a concert pervaded by the all too familiar gambits of the avant-garde's more recent offerings."</p>
+            <p><span class="review-source">Hubert Culot, BBC Music Magazine:</span> "<em>Musica Angelorum</em> for string orchestra is…as successful and attractive as <em>Burnt Sienna</em>. Many arresting moments in this atmospheric piece that vastly repays repeated hearings. Wilkins has a real feeling for and liking of string textures."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Orpheus &nbsp;(1973)</div>
+            <p><span class="review-source">Times Educational Supplement:</span> "Contains many interesting passages where plucked notes inside the piano were made to balance structurally against pizzicato and tremolando effects from the violin."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Burnt Sienna: Etude for String Trio &nbsp;(1974)</div>
+            <p><span class="review-source">Scotsman:</span> "A series of studies, cogently and excitingly presented of the different dramatic sonorities obtainable from a string trio."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Aspects of Night &nbsp;(1981)</div>
+            <p><span class="review-source">Michael Ball:</span> "…marvellous humour and variety of gesture…. richly entertaining…the inventiveness and sense of colour in small spaces."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Epistola da San Marco &nbsp;(1987)</div>
+            <p><span class="review-source">David Briers, Huddersfield Examiner:</span> "A powerful essay for brass band, with trumpets thundering at the back of the hall."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Playtime &nbsp;(1985)</div>
+            <p><span class="review-source">Huddersfield Examiner:</span> "Local children's poems are the inspiration behind the piece and though there is nothing straightforward about the music's tonality or structure, the children took it warmly to their hearts."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">A Dance to the Music of Time &nbsp;(1980)</div>
+            <p><span class="review-source">Huddersfield Examiner:</span> "…a delicately woven subject, treated in a precise and disciplined manner, though managing without seeming effort, to create endlessness, a feeling of suspension, maintained despite lively rhythmic pulses."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Study in Black &amp; White No. 1 &nbsp;(1983)</div>
+            <p><span class="review-source">Meirion Bowen, Guardian:</span> "A notable exception extended a Bartokian idiom with power, panache and real ingenuity."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Study in Black &amp; White No. 2 &nbsp;(1992)</div>
+            <p><span class="review-source">Dmitri van der Werf, De Haagse Courant:</span> "Heel wat verrassender waren Margaret Lucy Wilkins' bijzonder overtuigende <em>Study in Black &amp; White No. 2</em>."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">KANAL &nbsp;(1990)</div>
+            <p><span class="review-source">David Hammond, Huddersfield Examiner:</span> "KANAL implies a channel — a way through — as well as a canal. It is an intriguing, metaphoric title for an intriguing work, which makes use of texts from writers as far apart as Blake and Brecht, and mixes words and music, movement and light, in an abstract, and at times quite exciting fashion…. The score provides for a rich texture of resonant sound, rising, falling and echoing in its important contribution to the atmosphere of this unusual, original and engrossing work."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Stringsing &nbsp;(1992)</div>
+            <p><span class="review-source">Stephen Barber, Event Magazine:</span> "This was a powerful, engrossing and disturbing piece."</p>
+            <p><span class="review-source">Ramsey Burt, Yorkshire Evening Post:</span> "Julie Wilson's choreographed duets and the Margaret Lucy Wilkins music for <em>Strung Out</em> start at maximum emotional pitch so that one wonders how they can possibly develop — but they do, in a bleak look at a relationship gone sour."</p>
+        </div>
+
+        <div class="review-entry">
+            <div class="review-title">Three Skelmanthorpe Carols &nbsp;(1980)</div>
+            <p><span class="review-source">Wakefield Examiner:</span> "Such is their high musical quality there is no doubt that the carols will grace many a Christmas programme for years to come."</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ════════════════════════════════
+     GALLERY
+════════════════════════════════ -->
+<div class="full-divider"><div class="bar"></div><div class="gem"></div><div class="bar"></div></div>
+
+<section id="gallery">
+    <div class="gallery-head">
+        <h2 class="section-title">Gallery</h2>
+        <p class="gallery-sub">A selection of Margaret Lucy Wilkins' paintings</p>
+        <p class="ornament">· · · ✦ · · ·</p>
+    </div>
+    <div class="image-grid">
+        <img src="8649_r_800x640.jpeg" alt="Painting by Margaret Lucy Wilkins">
+        <img src="3692_r_800x640.jpeg" alt="Painting by Margaret Lucy Wilkins">
+    </div>
+    <div class="image-grid">
+        <img src="3690_r_800x640.jpeg" alt="Painting by Margaret Lucy Wilkins">
+        <img src="3691_r_800x640.jpeg" alt="Painting by Margaret Lucy Wilkins">
+    </div>
+</section>
+
+<div class="site-footer"></div>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector("body").scrollIntoView({
-                behavior: "smooth"
-            });
+            const href = this.getAttribute('href');
+            const el = href === '#' ? document.body : document.querySelector(href);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
